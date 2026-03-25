@@ -1,65 +1,148 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main>
+      <section className="page-wrap pt-12 md:pt-20">
+        <div className="card-ui overflow-hidden p-8 md:p-12">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div>
+              <span className="badge-ui">Golf × Charity × Rewards</span>
+
+              <h1 className="mt-5 text-4xl font-bold leading-tight md:text-6xl">
+                Play. Win.{" "}
+                <span className="bg-gradient-to-r from-violet-300 to-emerald-300 bg-clip-text text-transparent">
+                  Give Back.
+                </span>
+              </h1>
+
+              <p className="mt-6 max-w-2xl text-base text-slate-300 md:text-lg">
+                A premium subscription platform where players track their latest
+                Stableford scores, enter monthly draws, and contribute part of
+                every subscription to a chosen charity.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link href="/signup" className="button-primary">
+                  Get Started
+                </Link>
+                <Link href="/login" className="button-secondary">
+                  Login
+                </Link>
+              </div>
+            </div>
+
+            <div className="grid gap-4">
+              <div className="card-ui p-6">
+                <p className="text-sm text-slate-400">Monthly Draw</p>
+                <h3 className="mt-2 text-2xl font-semibold">
+                  3 / 4 / 5 Match Tiers
+                </h3>
+                <p className="mt-3 text-sm text-slate-300">
+                  Users are evaluated based on their latest 5 submitted scores
+                  against monthly draw numbers.
+                </p>
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="card-ui p-6">
+                  <p className="text-sm text-slate-400">Charity Contribution</p>
+                  <h3 className="mt-2 text-2xl font-semibold">Minimum 10%</h3>
+                </div>
+                <div className="card-ui p-6">
+                  <p className="text-sm text-slate-400">Score Rule</p>
+                  <h3 className="mt-2 text-2xl font-semibold">
+                    Latest 5 Retained
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="page-wrap">
+        <div className="grid gap-6 md:grid-cols-3">
+          <div className="card-ui p-6">
+            <h2 className="text-xl font-semibold">1. Subscribe</h2>
+            <p className="mt-3 text-sm text-slate-300">
+              Choose a monthly or yearly plan and access the platform.
+            </p>
+          </div>
+          <div className="card-ui p-6">
+            <h2 className="text-xl font-semibold">2. Add Scores</h2>
+            <p className="mt-3 text-sm text-slate-300">
+              Enter your Stableford scores with validation from 1 to 45.
+            </p>
+          </div>
+          <div className="card-ui p-6">
+            <h2 className="text-xl font-semibold">3. Support a Cause</h2>
+            <p className="mt-3 text-sm text-slate-300">
+              Select a charity and contribute at least 10% of your subscription.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="page-wrap">
+        <div className="card-ui p-8">
+          <h2 className="text-3xl font-bold">How the Draw Works</h2>
+          <p className="mt-3 max-w-3xl text-sm text-slate-300">
+            Every month, the platform generates 5 draw numbers. Each active
+            subscriber is evaluated using only their latest 5 Stableford scores.
+            Matching 3, 4, or 5 numbers qualifies the player for a prize tier.
           </p>
+
+          <div className="mt-8 grid gap-5 md:grid-cols-4">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <p className="text-sm text-slate-400">Step 1</p>
+              <h3 className="mt-2 text-xl font-semibold">Subscribe</h3>
+              <p className="mt-2 text-sm text-slate-300">
+                Activate a monthly or yearly plan.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <p className="text-sm text-slate-400">Step 2</p>
+              <h3 className="mt-2 text-xl font-semibold">Submit Scores</h3>
+              <p className="mt-2 text-sm text-slate-300">
+                The system keeps only your latest 5 valid scores.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <p className="text-sm text-slate-400">Step 3</p>
+              <h3 className="mt-2 text-xl font-semibold">Monthly Draw</h3>
+              <p className="mt-2 text-sm text-slate-300">
+                Admin runs the draw and generates 5 random numbers.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <p className="text-sm text-slate-400">Step 4</p>
+              <h3 className="mt-2 text-xl font-semibold">Win & Verify</h3>
+              <p className="mt-2 text-sm text-slate-300">
+                Winners are grouped into 3, 4, and 5 match tiers.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <p className="text-sm text-slate-400">3 Match</p>
+              <h3 className="mt-2 text-2xl font-semibold">Standard Tier</h3>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <p className="text-sm text-slate-400">4 Match</p>
+              <h3 className="mt-2 text-2xl font-semibold">Strong Tier</h3>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <p className="text-sm text-slate-400">5 Match</p>
+              <h3 className="mt-2 text-2xl font-semibold">Premium Tier</h3>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
