@@ -137,7 +137,14 @@ middleware.ts         # Route protection and auth checks
 * **Deployment:** Vercel
 
 ---
+## 🔐 Backend Design Notes
 
+The project uses **Supabase** for authentication, database storage, and row-level security.
+
+Additional documentation:
+- [Database Schema](./docs/schema.md)
+- [RLS Policies](./docs/rls-policies.md)
+- 
 ## 🧪 Setup Instructions
 
 ### 1. Clone the repository
