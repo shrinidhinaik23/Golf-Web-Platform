@@ -1,163 +1,195 @@
 # ⛳ Golf Charity Subscription Platform
 
-A full-stack subscription-based web application combining golf performance tracking, charity fundraising, and a monthly draw-based reward system.
+A full-stack subscription-based web application that combines **golf performance tracking**, **charity fundraising**, and a **monthly reward system**.
 
-This project is designed as a modern, engaging platform that avoids traditional golf UI patterns while delivering real-world system functionality including payments, lifecycle management, and admin controls.
+This project is built to demonstrate real-world system design including authentication, payments, role-based access, and admin workflows.
 
 ---
 
 ## 🚀 Live Demo
 
-- 🌐 Live Website: https://golf-web-platform.vercel.app  
-- 👤 User Dashboard: https://golf-web-platform.vercel.app/dashboard  
-- 🛠 Admin Panel: https://golf-web-platform.vercel.app/admin  
+* 🌐 Live Website: https://golf-web-platform.vercel.app
+* 👤 User Dashboard: https://golf-web-platform.vercel.app/dashboard
+* 🛠 Admin Panel: https://golf-web-platform.vercel.app/admin
 
 ---
 
-## 📌 Core Features
+## 💡 Why this project?
 
-### 🔐 Authentication & Roles
-- Secure user signup and login (Supabase Auth)
-- Role-based access control (User / Admin)
+Most platforms focus either on sports tracking or donations.
+This project combines both into a single system where:
 
----
+* Users track golf performance
+* Subscriptions contribute to charity
+* Monthly draws reward participants
 
-### 💳 Subscription & Payment System
-- Monthly and Yearly subscription plans
-- Razorpay payment integration
-- Subscription lifecycle:
-  - Active
-  - Cancelled
-  - Lapsed
-- Payment retry and reactivation
-- Restricted access for non-subscribers
+It demonstrates how **business logic + user engagement + payments** can be integrated into one product.
 
 ---
 
-### 📊 Score Management System
-- Stableford score entry
-- Score range: 1–45
-- Each score includes date
-- Only latest 5 scores retained
-- Oldest score automatically replaced
-- Latest scores shown first
+## ✨ Key Features
+
+* 🔐 User authentication (Supabase Auth)
+* 👥 Role-based access (User / Admin)
+* 💳 Subscription system with Razorpay
+* 📊 Golf score tracking (Stableford format)
+* 🧾 Score history with limit (last 5 scores)
+* 🎯 Monthly draw system (reward-based)
+* 🛠 Admin panel to manage users, draws, charities
+* 🚫 Access restriction for non-subscribed users
+* 📱 Fully responsive UI
 
 ---
 
-### 🎯 Draw & Reward System
-- Monthly draw system
-- Match types:
-  - 5-number match
-  - 4-number match
-  - 3-number match
-- Random draw generation
-- Admin-controlled publishing
+## 📸 Screenshots
 
----
+### 🏠 Landing Page
 
-### ❤️ Charity Integration
-- Charity selection by user
-- Adjustable contribution %
-- Automatic donation calculation
-- Donation tracking
+![Landing](./assets/landing.png)
 
----
+### 📊 User Dashboard
 
-### 👤 User Dashboard
-- Subscription management
-- Score entry & history
-- Charity selection
-- Account overview
-
----
+![Dashboard](./assets/dashboard.png)
 
 ### 🛠 Admin Panel
-- Manage users
-- Run draws
-- Manage winners
-- Verify payouts
-- Upload proof
-- View analytics
+
+![Admin](./assets/admin.png)
+
+### 💳 Subscription / Pricing
+
+![Pricing](./assets/pricing.png)
+
+### 📈 Score Tracking
+
+![Scores](./assets/scores.png)
 
 ---
 
-## 🧱 Tech Stack
+## 🏗 Architecture
 
-- Next.js (App Router)
-- TypeScript
-- Tailwind CSS
-- Supabase (DB + Auth)
-- Razorpay (Payments)
-- Vercel (Deployment)
+The platform is built as a full-stack application using Next.js with integrated backend logic.
+
+### Main Components
+
+* **Frontend:** Next.js (App Router), TypeScript, Tailwind CSS
+* **Backend Logic:** Next.js API routes
+* **Authentication & Database:** Supabase
+* **Payments:** Razorpay
+* **Deployment:** Vercel
 
 ---
 
-## ⚙️ Setup Instructions
+## 📂 Folder Structure
 
-### 1. Clone Repository
+```bash
+app/                  # Pages, routes, and API endpoints
+components/layout/    # Navbar, sidebar, reusable UI
+lib/                  # Utility functions and Supabase config
+public/               # Static assets
+middleware.ts         # Route protection and auth checks
+```
+
+---
+
+## 🔄 Core Workflows
+
+### 👤 User Flow
+
+1. User signs up / logs in
+2. Selects subscription plan
+3. Completes payment via Razorpay
+4. Gains access to dashboard
+5. Enters golf scores
+6. Participates in monthly draw
+
+### 💳 Subscription Flow
+
+* User selects plan
+* Razorpay payment is triggered
+* On success → subscription activated
+* On expiry → access restricted
+
+### 📊 Score Management
+
+* Users can enter scores (range: 1–45)
+* Only last 5 scores are stored
+* New score removes oldest automatically
+
+### 🛠 Admin Flow
+
+* Manage users and subscriptions
+* Create and manage draws
+* Add/manage charities
+* Publish winners
+
+---
+
+## ⚙️ Tech Stack
+
+* **Frontend:** Next.js, TypeScript, Tailwind CSS
+* **Backend:** Next.js API Routes
+* **Database & Auth:** Supabase
+* **Payments:** Razorpay
+* **Deployment:** Vercel
+
+---
+
+## 🧪 Setup Instructions
+
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/shrinidhinaik23/Golf-Web-Platform.git
 cd Golf-Web-Platform
 ```
 
----
-
-### 2. Install Dependencies
+### 2. Install dependencies
 
 ```bash
 npm install
-npm install @supabase/supabase-js razorpay clsx react-icons
 ```
 
----
-
-### 3. Add Environment Variables
-
-Create `.env.local`
+### 3. Create `.env.local`
 
 ```env
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-NEXT_PUBLIC_RAZORPAY_KEY_ID=your_razorpay_key_id
-RAZORPAY_KEY_ID=your_razorpay_key_id
-RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+NEXT_PUBLIC_SUPABASE_URL=your_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key
+NEXT_PUBLIC_RAZORPAY_KEY_ID=your_key
+RAZORPAY_KEY_SECRET=your_secret
 ```
 
----
-
-### 4. Run Project
+### 4. Run the project
 
 ```bash
 npm run dev
 ```
 
-Open:
-```
-http://localhost:3000
-```
+---
+
+## ⚠️ Current Limitations
+
+* Built as an MVP-style project
+* Payment system is configured mainly for testing/demo
+* Advanced analytics features are limited
+* No automated testing or CI/CD yet
 
 ---
 
-## 🧪 Testing Checklist
+## 🚀 Future Improvements
 
-- Signup & login  
-- Payment flow  
-- Score entry (5-score logic)  
-- Draw system  
-- Charity contribution  
-- Admin panel  
-- Edge cases  
+* Add unit and integration testing
+* Add CI/CD pipeline
+* Improve admin analytics dashboard
+* Add audit logs for admin actions
+* Enhance subscription lifecycle handling
+* Add notification system (email/SMS)
 
 ---
 
 ## 👨‍💻 Author
 
-Shrinidhi Naik  
-https://github.com/shrinidhinaik23  
+**Shrinidhi Naik**
+
+* GitHub: https://github.com/shrinidhinaik23
 
 ---
-
-## 📄 License
-
-Educational / assignment use
