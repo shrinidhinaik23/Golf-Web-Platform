@@ -2,7 +2,7 @@
 
 A full-stack subscription-based web application that combines **golf performance tracking**, **charity fundraising**, and a **monthly reward system**.
 
-This project is built to demonstrate real-world system design including authentication, payments, role-based access, and admin workflows.
+This project demonstrates real-world system design including authentication, payments, role-based access, and admin workflows.
 
 ---
 
@@ -23,7 +23,7 @@ This project combines both into a single system where:
 * Subscriptions contribute to charity
 * Monthly draws reward participants
 
-It demonstrates how **business logic + user engagement + payments** can be integrated into one product.
+It demonstrates how **business logic, user engagement, and payments** can be integrated into one product.
 
 ---
 
@@ -35,7 +35,7 @@ It demonstrates how **business logic + user engagement + payments** can be integ
 * 📊 Golf score tracking (Stableford format)
 * 🧾 Score history with limit (last 5 scores)
 * 🎯 Monthly draw system (reward-based)
-* 🛠 Admin panel to manage users, draws, charities
+* 🛠 Admin panel to manage users, draws, and charities
 * 🚫 Access restriction for non-subscribed users
 * 📱 Fully responsive UI
 
@@ -49,19 +49,23 @@ It demonstrates how **business logic + user engagement + payments** can be integ
 
 ### 📊 User Dashboard
 
-![Dashboard](./assets/dashboard.png)
+![Dashboard](./assets/user.png)
 
-### 🛠 Admin Panel
+### 🛠 Admin Dashboard
 
 ![Admin](./assets/admin.png)
-
-### 💳 Subscription / Pricing
-
-![Pricing](./assets/pricing.png)
 
 ### 📈 Score Tracking
 
 ![Scores](./assets/scores.png)
+
+### 💳 Subscription Management
+
+![Subscription](./assets/subscription.png)
+
+### 💰 Payment Integration
+
+![Payment](./assets/payment1.png)
 
 ---
 
